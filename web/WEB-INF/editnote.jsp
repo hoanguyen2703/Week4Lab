@@ -5,6 +5,7 @@
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@ taglib prefix = "c" uri = "http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
     <head>
@@ -12,6 +13,15 @@
         <title>Edit Note Page</title>
     </head>
     <body>
-        <h1>Hello World!</h1>
+        <p><h1>Simple Note Keeper</h1></p>
+        <p><h2>Edit Note</h2></p>
+
+        <form method="post" action="note">
+            Title: 
+            <input type="text" name="title" value="<c:out value="${note.title}"/>" /><br />
+            Contents: 
+            <textarea name="contents"rows="5" cols="25"><c:out value="${note.contents}"/></textarea><br>
+            <input type="submit" value="Save">
+        </form>
     </body>
 </html>
